@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-# Projeto de Kubernet Compass Uol
-=======
+
 # Projeto Kubernet e GitOps
->>>>>>> 2a85da9 (Versão final rmd)
+
 Projeto de Kubernet Compass Uol
 
 ## Objetivo: 
@@ -45,7 +43,9 @@ Depois de instalado o RancherDesktop ative o WSL - Windows Subsystem for Linux, 
  Se tudo tiver ok com a instalação do Kubernet:
 
  ```kubectl get nodes```
+
  Digite o camando acima no terminal de sua preferencia, asaida deve ser algo semelhante a imagem abaixo. 
+
  ![](img/image2.png)
 
 #### *ArgoCD*
@@ -53,7 +53,7 @@ Depois de instalado o RancherDesktop ative o WSL - Windows Subsystem for Linux, 
 
 ```bash kubectl create namespace argocd 
 kubectl apply -n argocd -f
- https://raw.githubusercontent.com/argoproj/argo￾cd/stable/manifests/install.yaml
+ https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 - Após a instalação, exponha o serviço do ArgoCD para acesso externo:
 
@@ -116,7 +116,9 @@ Depois de acessar o programa recomendasse mudar a senha em:
    git --version
    ```
    Depois de instalado, abra o Git: 
+
    ![](img/image4.png)
+
    No terminal que abril, digite os comandos abaixo para criar seu usurio local.
   ```bash
   git config --global user.name "Seu Nome"
@@ -130,6 +132,7 @@ Depois de acessar o programa recomendasse mudar a senha em:
 # Fork dos Arquivos da Loja Butique
 
 1. Passo: acesse o link abaixo
+
 https://github.com/GoogleCloudPlatform/microservices-demo
 <p>
 
