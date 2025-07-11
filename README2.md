@@ -200,7 +200,5 @@ Agora j√° podemos acessar o FrontEnd via navegador digitando na barra de endere√
 A saida deve ser igual a imagem abaixo:
 ![](img/image8.png)
 
-- Video do Projeto funcionando.
-Link: 
 
 
