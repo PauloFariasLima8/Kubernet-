@@ -5,23 +5,17 @@ metadata:
   namespace: default
   labels:
     app: frontend
-  annotations:
-    argocd.argoproj.io/tracking-id: online-boutique:apps/Deployment:default/frontend
-    sidecar.istio.io/rewriteAppHTTPProbers: "true"
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: frontend
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 25%
-      maxUnavailable: 25%
   template:
     metadata:
       labels:
         app: frontend
+      annotations:
+        sidecar.istio.io/rewriteAppHTTPProbers: "true"
     spec:
       serviceAccountName: frontend
       securityContext:
@@ -31,7 +25,7 @@ spec:
         runAsNonRoot: true
       containers:
       - name: server
-        image: ghcr.io/google_samples/microservices-demo/frontend:v0.10.3
+        image: us-central1-docker.pkg.dev/google-samples/microservices-demo/frontend:v0.10.3
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
@@ -58,11 +52,11 @@ spec:
           value: "0"
         resources:
           requests:
-            cpu: 100m
-            memory: 64Mi
+            cpu: "100m"
+            memory: "64Mi"
           limits:
-            cpu: 200m
-            memory: 128Mi
+            cpu: "200m"
+            memory: "128Mi"
         livenessProbe:
           httpGet:
             path: /_healthz
@@ -92,4 +86,5 @@ spec:
           allowPrivilegeEscalation: false
           privileged: false
           capabilities:
-            drop: ["ALL"]
+            drop:
+            - ALL
